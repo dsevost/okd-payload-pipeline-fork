@@ -29,8 +29,6 @@ spec:
         kind: ImageStreamTag
         name: tools:fedora37
       buildArgs:
-        - name: ARCHITECTURE
-          value: x86_64
         - name: CRIO_VERSION
           value: "1.25"
   output:
