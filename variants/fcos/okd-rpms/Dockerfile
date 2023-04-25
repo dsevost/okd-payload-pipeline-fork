@@ -13,7 +13,7 @@ RUN \
     dnf download -y cri-o cri-tools --destdir /rpms && \
     dnf clean all
 
-COPY --from=artifacts /srv/repo/$([ -d /tmp/rpms/$(uname -m) ] && echo $(uname -m)/)*.rpm /rpms/
+COPY --from=artifacts /srv/repo/$([ -d /srv/repo/$(uname -m) ] && echo $(uname -m)/)*.rpm /rpms/
 
 # TODO: check: is it really needed
 COPY --from=mcd /usr/bin/machine-config-daemon /binaries/machine-config-daemon
